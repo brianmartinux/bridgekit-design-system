@@ -1,0 +1,63 @@
+.bridge-select-field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.bridge-select-field__label {
+  color: var(--color-ink);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.bridge-select-field__control-wrap {
+  position: relative;
+}
+
+.bridge-select-field__control {
+  appearance: none;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--color-line);
+  border-radius: 14px;
+  color: var(--color-ink);
+  cursor: pointer;
+  font: inherit;
+  min-height: 2.9rem;
+  padding: 0.75rem 2.5rem 0.75rem 0.9rem;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease;
+  width: 100%;
+}
+
+.bridge-select-field__control:focus-visible {
+  border-color: rgba(0, 95, 120, 0.55);
+  box-shadow: 0 0 0 4px rgba(0, 95, 120, 0.14);
+  outline: none;
+}
+
+.bridge-select-field__control--error {
+  border-color: rgba(122, 45, 39, 0.6);
+}
+
+.bridge-select-field__caret {
+  color: var(--color-muted-ink);
+  pointer-events: none;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.bridge-select-field__hint,
+.bridge-select-field__error {
+  font-size: 0.88rem;
+}
+
+.bridge-select-field__hint {
+  color: var(--color-muted-ink);
+}
+
+.bridge-select-field__error {
+  color: #7a2d27;
+}

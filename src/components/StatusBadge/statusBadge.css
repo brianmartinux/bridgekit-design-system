@@ -1,0 +1,56 @@
+.bridge-status-badge {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 999px;
+  color: var(--badge-text, var(--color-ink));
+  display: inline-flex;
+  font-size: 0.84rem;
+  font-weight: 700;
+  gap: 0.5rem;
+  line-height: 1;
+  padding: 0.45rem 0.7rem 0.45rem 0.45rem;
+}
+
+.bridge-status-badge__marker {
+  align-items: center;
+  background: var(--badge-surface, rgba(0, 95, 120, 0.1));
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 0.7rem;
+  height: 1.35rem;
+  justify-content: center;
+  letter-spacing: 0.05em;
+  min-width: 1.35rem;
+  padding: 0 0.15rem;
+}
+
+.bridge-status-badge--new {
+  --badge-surface: rgba(0, 95, 120, 0.14);
+  --badge-text: #005f78;
+}
+
+.bridge-status-badge--inReview {
+  --badge-surface: rgba(33, 86, 142, 0.14);
+  --badge-text: #21568e;
+}
+
+.bridge-status-badge--needsInfo {
+  --badge-surface: rgba(155, 111, 32, 0.16);
+  --badge-text: #7d5610;
+}
+
+.bridge-status-badge--interviewing {
+  --badge-surface: rgba(90, 79, 143, 0.14);
+  --badge-text: #5a4f8f;
+}
+
+.bridge-status-badge--approved {
+  --badge-surface: rgba(29, 104, 71, 0.14);
+  --badge-text: #1d6847;
+}
+
+.bridge-status-badge--rejected {
+  --badge-surface: rgba(122, 45, 39, 0.14);
+  --badge-text: #7a2d27;
+}

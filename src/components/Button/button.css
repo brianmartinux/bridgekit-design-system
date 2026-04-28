@@ -1,0 +1,107 @@
+.bridge-button {
+  --button-background: var(--color-accent);
+  --button-border: transparent;
+  --button-color: #f8fbfc;
+  --button-shadow: 0 10px 30px rgba(0, 72, 92, 0.18);
+  align-items: center;
+  background: var(--button-background);
+  border: 1px solid var(--button-border);
+  border-radius: 999px;
+  box-shadow: var(--button-shadow);
+  color: var(--button-color);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-weight: 600;
+  justify-content: center;
+  letter-spacing: 0.01em;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease,
+    border-color 160ms ease;
+}
+
+.bridge-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.bridge-button:focus-visible {
+  outline: 3px solid rgba(0, 95, 120, 0.22);
+  outline-offset: 3px;
+}
+
+.bridge-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+}
+
+.bridge-button--primary {
+  --button-background: linear-gradient(135deg, #005f78 0%, #1b7d91 100%);
+}
+
+.bridge-button--secondary {
+  --button-background: #ffffff;
+  --button-border: rgba(0, 95, 120, 0.2);
+  --button-color: var(--color-ink);
+  --button-shadow: 0 10px 24px rgba(31, 43, 36, 0.08);
+}
+
+.bridge-button--quiet {
+  --button-background: rgba(0, 95, 120, 0.08);
+  --button-color: var(--color-accent-strong);
+  --button-shadow: none;
+}
+
+.bridge-button--danger {
+  --button-background: linear-gradient(135deg, #91453f 0%, #7a2d27 100%);
+}
+
+.bridge-button--sm {
+  min-height: 2.4rem;
+  padding: 0.55rem 0.85rem;
+}
+
+.bridge-button--md {
+  min-height: 2.9rem;
+  padding: 0.75rem 1.1rem;
+}
+
+.bridge-button--lg {
+  min-height: 3.25rem;
+  padding: 0.95rem 1.3rem;
+}
+
+.bridge-button__content {
+  align-items: center;
+  display: inline-grid;
+  gap: 0.55rem;
+  grid-template-columns: auto 1fr auto;
+}
+
+.bridge-button__icon,
+.bridge-button__placeholder,
+.bridge-button__spinner {
+  align-items: center;
+  display: inline-flex;
+  height: 1rem;
+  justify-content: center;
+  width: 1rem;
+}
+
+.bridge-button__spinner {
+  animation: bridge-button-spin 0.9s linear infinite;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+}
+
+.bridge-button__label {
+  white-space: nowrap;
+}
+
+@keyframes bridge-button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,52 @@
+.bridge-toast {
+  align-items: center;
+  background: rgba(31, 43, 36, 0.96);
+  border-radius: 20px;
+  bottom: 1.5rem;
+  box-shadow: 0 22px 50px rgba(31, 43, 36, 0.24);
+  color: #f8fbfc;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  max-width: min(32rem, calc(100vw - 2rem));
+  padding: 1rem 1.1rem;
+  position: fixed;
+  right: 1rem;
+  z-index: 40;
+}
+
+.bridge-toast--success {
+  background: rgba(29, 104, 71, 0.96);
+}
+
+.bridge-toast strong,
+.bridge-toast p {
+  margin: 0;
+}
+
+.bridge-toast p {
+  color: rgba(248, 251, 252, 0.82);
+  margin-top: 0.25rem;
+}
+
+.bridge-toast__actions {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.8rem;
+}
+
+.bridge-toast__dismiss {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  padding: 0;
+}
+
+.bridge-toast__dismiss:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.25);
+  outline-offset: 3px;
+}

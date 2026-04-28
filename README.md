@@ -1,73 +1,68 @@
-# React + TypeScript + Vite
+# BridgeKit
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+BridgeKit is a small AI-assisted design systems workflow demo. It is meant to function as a portfolio artifact for a Senior Product Designer or UX Design Engineer who wants to show how design intent becomes reusable component behavior, documentation, and a believable example workflow.
 
-Currently, two official plugins are available:
+This is intentionally not a fake large SaaS product. The scope stays small so the artifact can focus on:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React + TypeScript component architecture
+- reusable components with states and variants
+- Storybook documentation
+- accessibility notes
+- Figma-to-code parity thinking
+- AI workflow documentation
 
-## React Compiler
+## Project structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `src/components/*`: reusable UI primitives and patterns
+- `src/examples/ReviewQueue`: a compact example workflow
+- `src/tokens/tokens.ts`: status and design token metadata
+- `docs/*`: portfolio-facing documentation
 
-## Expanding the ESLint configuration
+## Scripts
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- `npm run dev`: start the Vite app
+- `npm run storybook`: start Storybook
+- `npm run build`: build the landing site to `dist` and copy docs
+- `npm run build-storybook`: build Storybook
+- `npm run build:all`: build the app, then place Storybook under `dist/storybook`
+- `npm run lint`: run ESLint
+- `npm run typecheck`: run TypeScript checks
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Local development
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+To work on component documentation in isolation:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run storybook
 ```
+
+## Deployment to Cloudflare Pages
+
+BridgeKit is set up for a simple static deployment.
+
+1. Run `npm run build:all`.
+2. Deploy the `dist` directory to Cloudflare Pages.
+3. Set the build command to `npm run build:all` if Cloudflare is building from the repo.
+4. Set the output directory to `dist`.
+
+Optional environment variable:
+
+- `VITE_REPO_URL`: when set, the landing page will render a live GitHub repository link.
+
+The built Storybook output lives at `/storybook/`, and the markdown docs are copied into `/docs/`.
+
+## Why this exists
+
+The point of the project is to demonstrate a practical workflow:
+
+- define a small component surface
+- map design properties to code props
+- document states and usage
+- show one believable example where the pieces work together
+
+That is often more useful in a portfolio than a broader but less disciplined demo.
