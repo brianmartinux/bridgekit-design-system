@@ -10,7 +10,8 @@
     "build-storybook": "storybook build",
     "build:all": "npm run build && npm run build-storybook -- --output-dir dist/storybook",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "chromatic": "npx chromatic --project-token=chpt_85e5233aba3b59d"
   },
   "dependencies": {
     "react": "^19.0.0",
@@ -25,6 +26,7 @@
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^6.0.1",
+    "chromatic": "^16.6.0",
     "eslint": "^9.20.0",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.18",
