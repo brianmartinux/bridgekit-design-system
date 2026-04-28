@@ -15,6 +15,7 @@
   font-weight: 600;
   justify-content: center;
   letter-spacing: 0.01em;
+  text-align: center;
   transition:
     transform 160ms ease,
     box-shadow 160ms ease,
@@ -74,9 +75,11 @@
 
 .bridge-button__content {
   align-items: center;
-  display: inline-grid;
+  display: inline-flex;
   gap: 0.55rem;
-  grid-template-columns: auto 1fr auto;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
 }
 
 .bridge-button__icon,
@@ -97,6 +100,7 @@
 }
 
 .bridge-button__label {
+  text-align: center;
   white-space: nowrap;
 }
 
